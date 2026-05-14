@@ -1,9 +1,9 @@
 /* ========== Variables & Reset ========== */
 :root {
-  --iu-red: #990000;
-  --iu-red-dark: #7a0000;
-  --iu-red-light: #b30000;
-  --iu-cream: #f7f3ee;
+  --primary: #990000;
+  --primary-dark: #7a0000;
+  --primary-light: #b30000;
+  --cream: #f7f3ee;
   --text-primary: #222222;
   --text-secondary: #555555;
   --text-light: #777777;
@@ -34,13 +34,13 @@ body {
 }
 
 a {
-  color: var(--iu-red);
+  color: var(--primary);
   text-decoration: none;
   transition: color 0.2s;
 }
 
 a:hover {
-  color: var(--iu-red-dark);
+  color: var(--primary-dark);
   text-decoration: underline;
 }
 
@@ -62,7 +62,7 @@ img {
   left: 0;
   right: 0;
   height: var(--nav-height);
-  background: var(--iu-red);
+  background: var(--primary);
   z-index: 1000;
   transition: box-shadow 0.3s;
 }
@@ -166,10 +166,10 @@ img {
   font-family: 'Roboto Slab', serif;
   font-size: 1.6rem;
   font-weight: 700;
-  color: var(--iu-red);
+  color: var(--primary);
   margin-bottom: 32px;
   padding-bottom: 8px;
-  border-bottom: 3px solid var(--iu-red);
+  border-bottom: 3px solid var(--primary);
   display: inline-block;
 }
 
@@ -223,7 +223,7 @@ img {
 
 .bio-affiliation {
   font-size: 1rem;
-  color: var(--iu-red);
+  color: var(--primary);
   font-weight: 500;
   margin-bottom: 2px;
 }
@@ -252,24 +252,24 @@ img {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  color: var(--iu-red);
+  color: var(--primary);
   font-size: 0.9rem;
   font-weight: 500;
   padding: 6px 14px;
-  border: 1.5px solid var(--iu-red);
+  border: 1.5px solid var(--primary);
   border-radius: 6px;
   transition: all 0.2s;
 }
 
 .bio-links a:hover {
-  background: var(--iu-red);
+  background: var(--primary);
   color: #ffffff;
   text-decoration: none;
 }
 
 /* ========== News Section ========== */
 .news-list {
-  border-left: 3px solid var(--iu-red);
+  border-left: 3px solid var(--primary);
   padding-left: 24px;
 }
 
@@ -283,7 +283,7 @@ img {
 .news-date {
   flex-shrink: 0;
   width: 80px;
-  color: var(--iu-red);
+  color: var(--primary);
   font-weight: 500;
   font-size: 0.85rem;
 }
@@ -310,7 +310,7 @@ img {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: var(--iu-red);
+  background: var(--primary);
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -327,7 +327,7 @@ img {
 }
 
 .edu-school {
-  color: var(--iu-red);
+  color: var(--primary);
   font-weight: 500;
   font-size: 0.95rem;
 }
@@ -401,7 +401,7 @@ img {
 
 .pub-authors a.coauthor-link:hover,
 .edu-note a.coauthor-link:hover {
-  color: var(--iu-red);
+  color: var(--primary);
 }
 
 .pub-venue {
@@ -413,7 +413,7 @@ img {
 
 .pub-venue-tag {
   display: inline-block;
-  background: var(--iu-red);
+  background: var(--primary);
   color: #ffffff;
   font-style: normal;
   font-weight: 700;
@@ -447,7 +447,7 @@ img {
 .pub-links a {
   font-size: 0.85rem;
   font-weight: 500;
-  color: var(--iu-red);
+  color: var(--primary);
 }
 
 .pub-links a:hover {
@@ -475,7 +475,7 @@ img {
   flex-shrink: 0;
   min-width: 120px;
   white-space: nowrap;
-  color: var(--iu-red);
+  color: var(--primary);
   font-weight: 700;
   font-size: 0.9rem;
 }
@@ -486,7 +486,7 @@ img {
 
 /* ========== Footer ========== */
 .footer {
-  background: var(--iu-red);
+  background: var(--primary);
   color: rgba(255, 255, 255, 0.85);
   text-align: center;
   padding: 28px 0;
@@ -515,7 +515,7 @@ img {
     top: var(--nav-height);
     left: 0;
     right: 0;
-    background: var(--iu-red-dark);
+    background: var(--primary-dark);
     flex-direction: column;
     padding: 12px 0;
   }
