@@ -386,6 +386,16 @@ img {
   text-overflow: ellipsis;
 }
 
+.pub-authors a.coauthor-link {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.pub-authors a.coauthor-link:hover {
+  color: var(--iu-red);
+}
+
 .pub-venue {
   font-size: 0.88rem;
   color: var(--text-light);
