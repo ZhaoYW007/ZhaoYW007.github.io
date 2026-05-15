@@ -454,6 +454,13 @@ img {
   text-decoration: underline;
 }
 
+.pub-toappear {
+  font-size: 0.85rem;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
 /* ========== Awards Section ========== */
 .awards-list {
   list-style: none;

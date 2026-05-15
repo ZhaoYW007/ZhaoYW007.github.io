@@ -44,6 +44,13 @@ function registerCoauthor(opts) {
 // ===== Registry (alphabetical by family name) =====
 
 registerCoauthor({
+  id: "kunal-agrawal",
+  fullName: "Kunal Agrawal",
+  institutionalSite: "https://engineering.washu.edu/faculty/Kunal-Agrawal.html",
+  googleScholar:     "https://scholar.google.com/citations?user=W362rUwAAAAJ&hl=en",
+});
+
+registerCoauthor({
   id: "guy-e-blelloch",
   fullName: "Guy E. Blelloch",
   personalSite:      "https://www.cs.cmu.edu/~guyb/",
@@ -242,6 +249,14 @@ registerCoauthor({
 
 registerCoauthor({ id: "qi-wang", fullName: "Qi Wang" });
 registerCoauthor({ id: "xiping-wang", fullName: "Xiping Wang" });
+
+registerCoauthor({
+  id: "yongwei-wu",
+  fullName: "Yongwei Wu",
+  personalSite:      "https://madsys.cs.tsinghua.edu.cn/~yongweiwu/",
+  institutionalSite: "https://www.cs.tsinghua.edu.cn/csen/info/1300/4373.htm",
+  googleScholar:     "https://scholar.google.com/citations?user=ld3axtkAAAAJ&hl=en",
+});
 
 registerCoauthor({
   id: "sai-qian-zhang",
