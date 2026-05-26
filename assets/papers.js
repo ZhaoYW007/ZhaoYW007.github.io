@@ -50,7 +50,10 @@ registerPaper({
   venueTag:  "SPAA",
   venueFull: "38th ACM Symposium on Parallelism in Algorithms and Architectures, 2026",
   thumbnail: "assets/papers/2026-SPAA-PIM-Scheduling.png",
-  toAppear: true,
+  links: [
+    { label: "Paper", url: "https://doi.org/10.1145/3816782.3819200" },
+    { label: "Code",  url: "https://github.com/cmuparlay/PIM-Scheduling" },
+  ],
   selected: true,
 });
 
