@@ -235,7 +235,7 @@ function buildYearNav(ol) {
   nav.setAttribute("aria-label", "Jump to year");
 
   const homeA = document.createElement("a");
-  homeA.href = "index.html";
+  homeA.href = "index.html#publications";
   homeA.className = "pub-year-home";
   homeA.innerHTML = '<i class="fas fa-house"></i> Home';
   nav.appendChild(homeA);
