@@ -516,9 +516,14 @@ img {
   left: calc((100vw - var(--max-width)) / 4);
   transform: translate(-50%, -50%);
   flex-direction: column;
-  align-items: flex-end;
+  align-items: stretch;
   gap: 4px;
   z-index: 50;
+  background: var(--bg-white);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 8px 6px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
 }
 
 @media (min-width: 1260px) {
@@ -530,24 +535,25 @@ img {
 .pub-year-nav a {
   font-size: 0.8rem;
   font-weight: 500;
-  color: var(--text-light);
+  color: var(--text-secondary);
   text-decoration: none;
-  padding: 4px 10px 4px 0;
-  border-right: 2px solid transparent;
-  transition: color 0.2s, border-color 0.2s;
+  padding: 5px 14px;
+  border-radius: 6px;
+  transition: color 0.15s, background 0.15s;
   white-space: nowrap;
-  text-align: right;
+  text-align: center;
 }
 
 .pub-year-nav a:hover {
-  color: var(--text-secondary);
+  color: var(--primary);
+  background: var(--bg-alt);
   text-decoration: none;
 }
 
 .pub-year-nav a.active {
-  color: var(--primary);
-  border-right-color: var(--primary);
-  font-weight: 700;
+  color: #ffffff;
+  background: var(--primary);
+  font-weight: 600;
 }
 
 /* ========== Awards Section ========== */
