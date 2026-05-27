@@ -240,13 +240,48 @@ function buildYearNav(ol) {
   homeA.innerHTML = '<i class="fas fa-house"></i> Home';
   nav.appendChild(homeA);
 
-  dividers.forEach((div, i) => {
-    const a = document.createElement("a");
-    a.href = "#" + div.id;
-    a.textContent = div.dataset.label;
-    if (i === 0) a.classList.add("active");
-    nav.appendChild(a);
+  // Map real years to anchor ids; track the "earlier" anchor separately.
+  const anchorByYear = {};
+  let earlierAnchorId = null;
+  dividers.forEach(div => {
+    if (div.id === "pub-year-earlier") {
+      earlierAnchorId = div.id;
+    } else {
+      const y = parseInt(div.dataset.label);
+      if (!isNaN(y)) anchorByYear[y] = div.id;
+    }
   });
+
+  const realYears = Object.keys(anchorByYear).map(Number).sort((a, b) => b - a);
+  if (!realYears.length) return;
+  const maxYear = realYears[0];
+  const minYear = realYears[realYears.length - 1];
+
+  // Emit one link per year in the continuous range [maxYear … minYear].
+  // Gap years (no papers) point to the nearest earlier year that does have
+  // papers and are tagged data-gap so the scroll spy skips them.
+  for (let y = maxYear; y >= minYear; y--) {
+    const a = document.createElement("a");
+    if (anchorByYear[y]) {
+      a.href = "#" + anchorByYear[y];
+    } else {
+      let target = earlierAnchorId;
+      for (let e = y - 1; e >= minYear; e--) {
+        if (anchorByYear[e]) { target = anchorByYear[e]; break; }
+      }
+      a.href = target ? "#" + target : "#";
+      a.dataset.gap = "true";
+    }
+    a.textContent = String(y);
+    nav.appendChild(a);
+  }
+
+  if (earlierAnchorId) {
+    const a = document.createElement("a");
+    a.href = "#" + earlierAnchorId;
+    a.textContent = "Earlier";
+    nav.appendChild(a);
+  }
 
   document.body.appendChild(nav);
 
@@ -264,6 +299,7 @@ function buildYearNav(ol) {
       }
     });
     nav.querySelectorAll("a").forEach(a => {
+      if (a.dataset.gap) return;  // gap years don't participate in active state
       a.classList.toggle("active", a.getAttribute("href") === "#" + activeId);
     });
   }
