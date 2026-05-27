@@ -227,7 +227,7 @@ function renderPaper(p) {
 }
 
 function buildYearNav(ol) {
-  const dividers = ol.querySelectorAll(".pub-year-divider");
+  const dividers = ol.querySelectorAll(".pub-year-anchor");
   if (!dividers.length) return;
 
   const nav = document.createElement("nav");
@@ -237,7 +237,7 @@ function buildYearNav(ol) {
   dividers.forEach((div, i) => {
     const a = document.createElement("a");
     a.href = "#" + div.id;
-    a.textContent = div.textContent;
+    a.textContent = div.dataset.label;
     if (i === 0) a.classList.add("active");
     nav.appendChild(a);
   });
@@ -284,9 +284,9 @@ function buildYearNav(ol) {
         if (yearKey !== lastYearKey) {
           lastYearKey = yearKey;
           const divider = document.createElement("li");
-          divider.className = "pub-year-divider";
+          divider.className = "pub-year-anchor";
           divider.id = "pub-year-" + yearKey;
-          divider.textContent = p.year >= 2023 ? String(p.year) : "Earlier";
+          divider.dataset.label = p.year >= 2023 ? String(p.year) : "Earlier";
           ol.appendChild(divider);
         }
         ol.appendChild(renderPaper(p));
