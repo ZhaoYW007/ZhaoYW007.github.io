@@ -234,6 +234,12 @@ function buildYearNav(ol) {
   nav.className = "pub-year-nav";
   nav.setAttribute("aria-label", "Jump to year");
 
+  const homeA = document.createElement("a");
+  homeA.href = "index.html";
+  homeA.className = "pub-year-home";
+  homeA.innerHTML = '<i class="fas fa-house"></i> Home';
+  nav.appendChild(homeA);
+
   dividers.forEach((div, i) => {
     const a = document.createElement("a");
     a.href = "#" + div.id;

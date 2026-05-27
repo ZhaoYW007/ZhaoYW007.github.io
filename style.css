@@ -526,6 +526,28 @@ img {
   }
 }
 
+.pub-year-home {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 5px 14px;
+  border-radius: 6px;
+  transition: color 0.15s, background 0.15s;
+  white-space: nowrap;
+  text-align: center;
+  margin-bottom: 4px;
+  padding-bottom: 9px;
+  border-bottom: 1px solid var(--border-color);
+  border-radius: 0;
+}
+
+.pub-year-home:hover {
+  color: var(--primary);
+  background: var(--bg-alt);
+  text-decoration: none;
+}
+
 .pub-year-nav a {
   font-size: 0.8rem;
   font-weight: 500;
