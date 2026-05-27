@@ -296,30 +296,46 @@ img {
 .education-list {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 16px;
 }
 
 .education-item {
   display: flex;
-  gap: 20px;
-  align-items: flex-start;
+  align-items: center;
+  gap: 22px;
+  padding: 18px 24px;
+  background: var(--bg-white);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
-.edu-icon {
+.education-item:hover {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  transform: translateY(-1px);
+}
+
+.edu-logo {
   flex-shrink: 0;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: var(--primary);
-  color: #ffffff;
+  width: 64px;
+  height: 64px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.1rem;
-  margin-top: 2px;
 }
 
-.edu-details h3 {
+.edu-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.edu-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.edu-body h3 {
   font-size: 1.05rem;
   font-weight: 600;
   color: var(--text-primary);
@@ -330,17 +346,33 @@ img {
   color: var(--primary);
   font-weight: 500;
   font-size: 0.95rem;
-}
-
-.edu-year {
-  color: var(--text-light);
-  font-size: 0.88rem;
+  margin-bottom: 2px;
 }
 
 .edu-note {
   color: var(--text-secondary);
   font-size: 0.88rem;
   font-style: italic;
+}
+
+.edu-year {
+  flex-shrink: 0;
+  color: var(--text-light);
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .education-item {
+    flex-wrap: wrap;
+    padding: 16px 18px;
+    gap: 16px;
+  }
+  .edu-year {
+    flex-basis: 100%;
+    padding-left: 80px;
+  }
 }
 
 /* ========== Publications Section ========== */
