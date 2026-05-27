@@ -492,6 +492,64 @@ img {
   color: var(--text-secondary);
 }
 
+/* ========== Year dividers (publications page) ========== */
+.pub-year-divider {
+  list-style: none;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  padding: 32px 0 10px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.pub-year-divider:first-child {
+  padding-top: 4px;
+}
+
+/* ========== Year navigation sidebar (publications page) ========== */
+.pub-year-nav {
+  display: none;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 16px;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  z-index: 50;
+}
+
+@media (min-width: 1260px) {
+  .pub-year-nav {
+    display: flex;
+  }
+}
+
+.pub-year-nav a {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-light);
+  text-decoration: none;
+  padding: 4px 10px 4px 0;
+  border-right: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+  white-space: nowrap;
+  text-align: right;
+}
+
+.pub-year-nav a:hover {
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+
+.pub-year-nav a.active {
+  color: var(--primary);
+  border-right-color: var(--primary);
+  font-weight: 700;
+}
+
 /* ========== Awards Section ========== */
 .awards-list {
   list-style: none;

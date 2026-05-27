@@ -26,6 +26,8 @@ class Paper {
     this.authors = authors;
     this.venueTag = venueTag;
     this.venueFull = venueFull;
+    const m = venueFull.match(/\b(20\d\d)\b/);
+    this.year = m ? parseInt(m[1]) : 0;
     this.thumbnail = thumbnail;
     this.links = links;
     this.award = award;
@@ -224,10 +226,74 @@ function renderPaper(p) {
   return li;
 }
 
+function buildYearNav(ol) {
+  const dividers = ol.querySelectorAll(".pub-year-divider");
+  if (!dividers.length) return;
+
+  const nav = document.createElement("nav");
+  nav.className = "pub-year-nav";
+  nav.setAttribute("aria-label", "Jump to year");
+
+  dividers.forEach((div, i) => {
+    const a = document.createElement("a");
+    a.href = "#" + div.id;
+    a.textContent = div.textContent;
+    if (i === 0) a.classList.add("active");
+    nav.appendChild(a);
+  });
+
+  document.body.appendChild(nav);
+
+  const navH = parseFloat(
+    getComputedStyle(document.documentElement).getPropertyValue("--nav-height")
+  ) || 56;
+  let ticking = false;
+
+  function updateActive() {
+    const threshold = window.scrollY + navH + 40;
+    let activeId = null;
+    dividers.forEach(div => {
+      if (div.getBoundingClientRect().top + window.scrollY <= threshold) {
+        activeId = div.id;
+      }
+    });
+    nav.querySelectorAll("a").forEach(a => {
+      a.classList.toggle("active", a.getAttribute("href") === "#" + activeId);
+    });
+  }
+
+  window.addEventListener("scroll", () => {
+    if (!ticking) {
+      requestAnimationFrame(() => { updateActive(); ticking = false; });
+      ticking = true;
+    }
+  }, { passive: true });
+
+  updateActive();
+}
+
 (function renderPapers() {
   document.querySelectorAll("ol.publication-list[data-pubs]").forEach(ol => {
     const mode = ol.getAttribute("data-pubs");
     const list = mode === "selected" ? PAPERS.filter(p => p.selected) : PAPERS;
-    list.forEach(p => ol.appendChild(renderPaper(p)));
+
+    if (mode === "full") {
+      let lastYearKey = null;
+      list.forEach(p => {
+        const yearKey = p.year >= 2023 ? String(p.year) : "earlier";
+        if (yearKey !== lastYearKey) {
+          lastYearKey = yearKey;
+          const divider = document.createElement("li");
+          divider.className = "pub-year-divider";
+          divider.id = "pub-year-" + yearKey;
+          divider.textContent = p.year >= 2023 ? String(p.year) : "Earlier";
+          ol.appendChild(divider);
+        }
+        ol.appendChild(renderPaper(p));
+      });
+      buildYearNav(ol);
+    } else {
+      list.forEach(p => ol.appendChild(renderPaper(p)));
+    }
   });
 })();
