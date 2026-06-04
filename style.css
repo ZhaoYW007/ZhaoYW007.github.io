@@ -385,11 +385,17 @@ img {
   display: flex;
   gap: 20px;
   padding: 20px 0;
-  border-bottom: 1px solid var(--border-color);
+  position: relative;
 }
 
-.publication-item:last-child {
-  border-bottom: none;
+.publication-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: -20px;
+  height: 1px;
+  background: var(--border-color);
 }
 
 .pub-thumbnail {
@@ -410,7 +416,7 @@ img {
 
 .pub-title {
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: var(--text-primary);
   margin-bottom: 4px;
 }
