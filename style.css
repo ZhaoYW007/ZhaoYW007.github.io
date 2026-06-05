@@ -393,7 +393,7 @@ img {
   position: absolute;
   bottom: 0;
   left: 0;
-  right: -20px;
+  right: -36px;
   height: 1px;
   background: var(--border-color);
 }
@@ -416,7 +416,7 @@ img {
 
 .pub-title {
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: var(--text-primary);
   margin-bottom: 4px;
 }
