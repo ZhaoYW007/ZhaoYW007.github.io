@@ -623,19 +623,17 @@ img {
   color: rgba(255, 255, 255, 0.6);
 }
 
-/* Visitor map widget — auto-width, so cap it and centre it in the footer */
+/* Visitor map widget — sized via w=200 in the script URL; the widget sets its
+   own inline width, so this just centres it and caps it on narrow screens */
 .footer-map {
-  max-width: 220px;
-  margin: 16px auto 0;
-  opacity: 0.9;
+  display: flex;
+  justify-content: center;
+  margin-top: 18px;
+  opacity: 0.85;
 }
 
-.footer-map img,
-.footer-map canvas,
-.footer-map iframe {
-  display: block;
+.footer-map #mapmyvisitors-widget {
   max-width: 100%;
-  height: auto;
 }
 
 /* ========== Responsive ========== */
