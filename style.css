@@ -623,6 +623,21 @@ img {
   color: rgba(255, 255, 255, 0.6);
 }
 
+/* Visitor map widget — auto-width, so cap it and centre it in the footer */
+.footer-map {
+  max-width: 220px;
+  margin: 16px auto 0;
+  opacity: 0.9;
+}
+
+.footer-map img,
+.footer-map canvas,
+.footer-map iframe {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 /* ========== Responsive ========== */
 @media (max-width: 768px) {
   .nav-toggle {
