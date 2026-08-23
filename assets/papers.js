@@ -126,7 +126,7 @@ registerPaper({
   links: [
     { label: "Paper", url: "https://doi.org/10.1145/3558481.3591070" },
   ],
-  selected: true,
+  selected: false,
 });
 
 registerPaper({
@@ -162,6 +162,7 @@ registerPaper({
     { label: "arXiv", url: "https://arxiv.org/abs/2305.03331" },
     { label: "Code",  url: "https://github.com/NetManAIOps/PSqueeze" },
   ],
+  selected: false,
 });
 
 registerPaper({
@@ -176,6 +177,7 @@ registerPaper({
     { label: "Slides", url: "https://netman.aiops.org/wp-content/uploads/2019/10/Squeeze-ISSRE2019_v2.pdf" },
     { label: "Code",   url: "https://github.com/NetManAIOps/Squeeze" },
   ],
+  selected: false,
 });
 
 // ===== Renderer =====
