@@ -241,6 +241,11 @@ img {
   font-size: 0.95rem;
 }
 
+.bio-highlight {
+  color: #d00000;
+  font-weight: 700;
+}
+
 .bio-links {
   display: flex;
   flex-wrap: wrap;
@@ -290,6 +295,31 @@ img {
 
 .news-content {
   color: var(--text-secondary);
+}
+
+.news-pinned {
+  background: var(--cream);
+  border-left: 3px solid var(--primary);
+  margin-left: -27px;
+  padding: 10px 12px 10px 24px;
+  border-radius: 0 6px 6px 0;
+}
+
+.news-pinned .news-content {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.news-pin-badge {
+  display: inline-block;
+  background: var(--primary);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 1px 8px;
+  margin-right: 6px;
+  border-radius: 4px;
+  vertical-align: 1px;
 }
 
 /* ========== Education Section ========== */
