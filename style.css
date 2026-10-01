@@ -241,6 +241,10 @@ img {
   font-size: 0.95rem;
 }
 
+.bio-description.bio-gap {
+  margin-bottom: 28px;
+}
+
 .bio-highlight {
   color: #d00000;
   font-weight: 700;
