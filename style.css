@@ -245,14 +245,14 @@ img {
   margin-bottom: 28px;
 }
 
-/* Splitter: short red accent followed by a thin line */
+/* Splitter: thin gray line */
 .bio-email::after {
   content: "";
   display: block;
   height: 3px;
   margin-top: 18px;
   border-radius: 2px;
-  background: linear-gradient(90deg, var(--primary) 0, var(--primary) 56px, var(--border-color) 56px);
+  background: var(--border-color);
 }
 
 .bio-highlight {
