@@ -826,9 +826,24 @@ img {
   padding: 0 5px;
 }
 
+.opp-fn-mark {
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 1em;
+  margin-left: 2px;
+}
+
 .opp-note {
-  margin-top: 10px;
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--border-color);
+  font-size: 0.85rem;
   font-style: italic;
+  color: var(--text-light);
+}
+
+.opp-note .opp-fn-mark {
+  margin: 0 4px 0 0;
 }
 
 /* Banner with campus photo (opportunities page) */
