@@ -99,8 +99,9 @@ img {
 
 .nav-links a {
   color: rgba(255, 255, 255, 0.9);
-  font-size: 0.9rem;
-  font-weight: 400;
+  font-size: 0.95rem;
+  font-weight: 500;
+  white-space: nowrap;
   padding: 6px 12px;
   border-radius: 4px;
   transition: background 0.2s, color 0.2s;
@@ -110,6 +111,20 @@ img {
   color: #ffffff;
   background: rgba(255, 255, 255, 0.15);
   text-decoration: none;
+}
+
+/* Narrow desktop/tablet: tighten the bar so all links fit on one line */
+@media (min-width: 769px) and (max-width: 940px) {
+  .nav-links {
+    gap: 2px;
+  }
+  .nav-links a {
+    font-size: 0.85rem;
+    padding: 6px 8px;
+  }
+  .nav-brand {
+    font-size: 1.1rem;
+  }
 }
 
 /* Hamburger */
