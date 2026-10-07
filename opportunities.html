@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Message for Prospective Students &mdash; Yiwei Zhao</title>
+  <link rel="stylesheet" href="style.css?v=14">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar">
+  <div class="container nav-container">
+    <a href="index.html" class="nav-brand">Yiwei Zhao</a>
+    <button class="nav-toggle" aria-label="Toggle navigation">
+      <span class="hamburger"></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#news">News</a></li>
+      <li><a href="index.html#employment">Employment &amp; Education</a></li>
+      <li><a href="index.html#publications">Publications</a></li>
+      <li><a href="opportunities.html">Opportunity</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Opportunities Section -->
+<section id="opportunities" class="section">
+  <div class="container">
+    <h2 class="section-title">A Message for Prospective Students</h2>
+    <p class="section-note"><a href="index.html">&larr; Back to home</a></p>
+
+    <p class="opp-intro">
+      We are always looking for motivated students and scholars.
+      We design faster and more efficient computer systems through cross-stack co-design,
+      spanning algorithms and data structures, systems and architectures, and hardware and circuits.
+      My <a href="index.html#publications">publications</a> also give a sense of our work.
+      If this direction excites you, I would love to hear from you.
+      Below you will find how to reach out.
+    </p>
+
+    <div class="opp-list">
+      <div class="opp-card">
+        <h3>Ph.D. Students <span class="opp-tag">Open</span></h3>
+        <p>I currently have <strong>Ph.D. openings</strong>. To apply:</p>
+        <ol class="opp-steps">
+          <li>Submit an application through the <a href="https://luddy.iu.edu/academics/doctoral/ise.html" target="_blank" rel="noopener noreferrer">Ph.D. in Intelligent Systems Engineering</a> program and mention my name in your application.</li>
+          <li><strong>Also email me</strong> at <span class="opp-email">yiwzhao [at] iu [dot] edu</span> and mention in the subject line that you are applying for a <strong>Ph.D. position</strong>, e.g., &ldquo;Interested in a Ph.D. position in your group&rdquo;.</li>
+        </ol>
+      </div>
+
+      <div class="opp-card">
+        <h3>Undergraduate, Master's, and Visiting Students</h3>
+        <p>I welcome undergraduate, master's, and visiting students who want to get involved in research.
+        Please email me at <span class="opp-email">yiwzhao [at] iu [dot] edu</span> and mention in the subject line which opening you are applying for
+        (<strong>undergraduate research</strong>, <strong>master's research</strong>, or <strong>visiting student</strong>),
+        e.g., &ldquo;Interested in undergraduate research in your group&rdquo;.</p>
+      </div>
+
+      <!-- <div class="opp-card">
+        <h3>Postdoctoral Researchers <span class="opp-tag opp-tag-closed">Not hiring</span></h3>
+        <p>I am not hiring postdocs at this time.</p>
+      </div> -->
+
+      <div class="opp-card">
+        <h3>What to Include in Your Email</h3>
+        <ul class="opp-steps">
+          <li>Your CV (and transcripts, if available).</li>
+          <li>A few sentences on your research interests and which of my works or directions interest you.</li>
+          <li>Relevant experience, such as research projects, systems or hardware projects, or code you have written (links welcome).</li>
+          <li>For visiting students: your intended duration and whether you have funding.</li>
+        </ul>
+        <p class="opp-note">I read all emails and will eventually reply to most of them, but due to the large volume, it may take some time.
+        Emails that clearly indicate their purpose will get a quicker response.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <p>&copy; Built and maintained by Yiwei Zhao.</p>
+    <p class="footer-note">Last updated: <span id="last-updated">July 2026</span></p>
+  </div>
+</footer>
+
+<script>
+  // Mobile nav toggle
+  document.querySelector('.nav-toggle').addEventListener('click', function() {
+    document.querySelector('.nav-links').classList.toggle('active');
+    this.classList.toggle('active');
+  });
+
+  // Close mobile nav on link click (cross-page links navigate normally)
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', function() {
+      document.querySelector('.nav-links').classList.remove('active');
+      document.querySelector('.nav-toggle').classList.remove('active');
+    });
+  });
+
+  // Navbar shadow on scroll
+  window.addEventListener('scroll', function() {
+    const nav = document.querySelector('.navbar');
+    nav.classList.toggle('scrolled', window.scrollY > 10);
+  });
+
+  // Footer "Last updated" — read from the page's own Last-Modified timestamp,
+  // which GitHub Pages refreshes on every deploy (no API calls, no rate limits).
+  (function () {
+    const d = new Date(document.lastModified);
+    if (!isNaN(d)) {
+      const label = d.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+      document.getElementById('last-updated').textContent = label;
+    }
+    // otherwise keep the static fallback in the markup
+  })();
+</script>
+
+</body>
+</html>
