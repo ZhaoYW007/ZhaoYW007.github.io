@@ -801,6 +801,10 @@ img {
 .opp-intro {
   color: var(--text-secondary);
   font-size: 0.95rem;
+  margin-bottom: 14px;
+}
+
+.opp-intro:last-of-type {
   margin-bottom: 24px;
 }
 
