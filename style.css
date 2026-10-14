@@ -3,6 +3,8 @@
   --primary: #990000;
   --primary-dark: #7a0000;
   --primary-light: #b30000;
+  --primary-bg: #990000;
+  --primary-bg-dark: #7a0000;
   --cream: #f7f3ee;
   --text-primary: #222222;
   --text-secondary: #555555;
@@ -55,6 +57,43 @@ img {
   padding: 0 24px;
 }
 
+/* ========== Night mode ========== */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --primary: #ff8080;
+  --primary-dark: #ffa8a8;
+  --primary-light: #ff9a9a;
+  --primary-bg: #7a1414;
+  --primary-bg-dark: #5a0e0e;
+  --cream: #2a2422;
+  --text-primary: #ececec;
+  --text-secondary: #bfc2c7;
+  --text-light: #9a9ea5;
+  --bg-white: #15171b;
+  --bg-alt: #1c1f24;
+  --border-color: #343941;
+}
+
+:root[data-theme="dark"] .bio-highlight {
+  color: #ff6b6b;
+}
+
+:root[data-theme="dark"] .pub-award,
+:root[data-theme="dark"] .pub-award a {
+  color: #e6b84a;
+}
+
+:root[data-theme="dark"] .edu-logo {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 6px;
+}
+
+:root[data-theme="dark"] .bio-photo img,
+:root[data-theme="dark"] .pub-thumbnail img {
+  filter: brightness(0.92);
+}
+
 /* ========== Navigation ========== */
 .navbar {
   position: fixed;
@@ -62,7 +101,7 @@ img {
   left: 0;
   right: 0;
   height: var(--nav-height);
-  background: var(--primary);
+  background: var(--primary-bg);
   z-index: 1000;
   transition: box-shadow 0.3s;
 }
@@ -113,6 +152,29 @@ img {
   text-decoration: none;
 }
 
+/* Day/night switch */
+.nav-links {
+  margin-left: auto;
+}
+
+.theme-toggle {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  margin-left: 12px;
+  background: rgba(255, 255, 255, 0.12);
+  border: none;
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
 /* "About" dropdown */
 .nav-dropdown {
   position: relative;
@@ -155,7 +217,7 @@ img {
   min-width: 210px;
   list-style: none;
   padding: 6px 0;
-  background: var(--primary-dark);
+  background: var(--primary-bg-dark);
   border-radius: 8px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
 }
@@ -353,7 +415,7 @@ img {
 }
 
 .bio-links a:hover {
-  background: var(--primary);
+  background: var(--primary-bg);
   color: #ffffff;
   text-decoration: none;
 }
@@ -398,7 +460,7 @@ img {
 .news-pin-badge {
   display: inline-block;
   margin-left: 8px;
-  background: var(--primary);
+  background: var(--primary-bg);
   color: #ffffff;
   font-size: 0.75rem;
   font-weight: 700;
@@ -580,7 +642,7 @@ img {
 
 .pub-venue-tag {
   display: inline-block;
-  background: var(--primary);
+  background: var(--primary-bg);
   color: #ffffff;
   font-style: normal;
   font-weight: 700;
@@ -703,7 +765,7 @@ img {
 
 .pub-year-nav a.active {
   color: #ffffff;
-  background: var(--primary);
+  background: var(--primary-bg);
   font-weight: 600;
 }
 
@@ -739,7 +801,7 @@ img {
 
 /* ========== Footer ========== */
 .footer {
-  background: var(--primary);
+  background: var(--primary-bg);
   color: rgba(255, 255, 255, 0.85);
   text-align: center;
   padding: 28px 0;
@@ -758,13 +820,23 @@ img {
     display: block;
   }
 
+  .theme-toggle {
+    order: 1;
+    margin-left: auto;
+    margin-right: 4px;
+  }
+
+  .nav-toggle {
+    order: 2;
+  }
+
   .nav-links {
     display: none;
     position: absolute;
     top: var(--nav-height);
     left: 0;
     right: 0;
-    background: var(--primary-dark);
+    background: var(--primary-bg-dark);
     flex-direction: column;
     padding: 12px 0;
   }
@@ -864,7 +936,7 @@ img {
   margin-left: 8px;
   padding: 1px 8px;
   border-radius: 4px;
-  background: var(--primary);
+  background: var(--primary-bg);
   color: #ffffff;
   font-size: 0.75rem;
   font-weight: 700;
