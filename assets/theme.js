@@ -1,4 +1,4 @@
-// Day/night mode: applied immediately (no flash), remembered in localStorage,
+// Day/night mode (the icon shows the current mode: sun = day, moon = night): applied immediately (no flash), remembered in localStorage,
 // defaults to the visitor's system preference.
 (function () {
   var root = document.documentElement;
@@ -13,9 +13,9 @@
     if (!btn) return;
     function render() {
       var isDark = root.getAttribute('data-theme') === 'dark';
-      btn.innerHTML = '<i class="fas ' + (isDark ? 'fa-sun' : 'fa-moon') + '" aria-hidden="true"></i>';
+      btn.innerHTML = '<i class="fas ' + (isDark ? 'fa-moon' : 'fa-sun') + '" aria-hidden="true"></i>';
       btn.setAttribute('aria-label', isDark ? 'Switch to day mode' : 'Switch to night mode');
-      btn.setAttribute('title', isDark ? 'Day mode' : 'Night mode');
+      btn.setAttribute('title', isDark ? 'Switch to day mode' : 'Switch to night mode');
     }
     btn.addEventListener('click', function () {
       var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
