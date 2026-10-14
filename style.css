@@ -113,6 +113,63 @@ img {
   text-decoration: none;
 }
 
+/* "About" dropdown */
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-dropdown-toggle:hover,
+.nav-dropdown.open .nav-dropdown-toggle {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.nav-dropdown-toggle i {
+  font-size: 0.7rem;
+  margin-left: 4px;
+  transition: transform 0.2s;
+}
+
+.nav-dropdown.open .nav-dropdown-toggle i {
+  transform: rotate(180deg);
+}
+
+.nav-submenu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 210px;
+  list-style: none;
+  padding: 6px 0;
+  background: var(--primary-dark);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.nav-dropdown.open .nav-submenu {
+  display: block;
+}
+
+.nav-submenu a {
+  display: block;
+  padding: 8px 18px;
+  border-radius: 0;
+}
+
 /* Narrow desktop/tablet: tighten the bar so all links fit on one line */
 @media (min-width: 769px) and (max-width: 940px) {
   .nav-links {
@@ -719,6 +776,26 @@ img {
   .nav-links a {
     padding: 10px 24px;
     border-radius: 0;
+  }
+
+  .nav-dropdown-toggle {
+    width: 100%;
+    text-align: left;
+    padding: 10px 24px;
+    border-radius: 0;
+  }
+
+  .nav-submenu {
+    position: static;
+    min-width: 0;
+    padding: 0;
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .nav-submenu a {
+    padding: 8px 24px 8px 40px;
   }
 
   .bio-container {

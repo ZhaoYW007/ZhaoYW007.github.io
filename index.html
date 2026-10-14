@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Yiwei Zhao</title>
-  <link rel="stylesheet" href="style.css?v=17">
+  <link rel="stylesheet" href="style.css?v=20">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -18,10 +18,18 @@
       <span class="hamburger"></span>
     </button>
     <ul class="nav-links">
-      <li><a href="#about">Bio</a></li>
-      <li><a href="#news">News</a></li>
-      <li><a href="#employment">Experience</a></li>
-      <li><a href="#publications">Publications</a></li>
+      <li class="nav-dropdown">
+        <button class="nav-dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">About <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+        <ul class="nav-submenu">
+          <li><a href="#about">Bio</a></li>
+          <li><a href="#news">News</a></li>
+          <li><a href="#employment">Professional Experience</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#publications">Selected Publications</a></li>
+          <li><a href="#awards">Awards</a></li>
+        </ul>
+      </li>
+      <li><a href="publications.html">Publications</a></li>
       <li><a href="opportunities.html">Work with Me</a></li>
     </ul>
   </div>
@@ -98,7 +106,7 @@
 <!-- Employment Section -->
 <section id="employment" class="section section-alt">
   <div class="container">
-    <h2 class="section-title">Employment</h2>
+    <h2 class="section-title">Professional Experience</h2>
     <div class="education-list">
       <div class="education-item">
         <div class="edu-logo">
@@ -222,6 +230,23 @@
       document.querySelector('.nav-toggle').classList.remove('active');
     });
   });
+
+  // "About" dropdown: click to open/close; any other click or Escape closes it
+  (function () {
+    const dd = document.querySelector('.nav-dropdown');
+    const btn = dd.querySelector('.nav-dropdown-toggle');
+    function setOpen(open) {
+      dd.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    btn.addEventListener('click', function () { setOpen(!dd.classList.contains('open')); });
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('.nav-dropdown-toggle')) setOpen(false);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') setOpen(false);
+    });
+  })();
 
   // Navbar shadow on scroll
   window.addEventListener('scroll', function() {

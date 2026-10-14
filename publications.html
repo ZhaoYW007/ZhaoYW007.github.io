@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Full Publications &mdash; Yiwei Zhao</title>
-  <link rel="stylesheet" href="style.css?v=17">
+  <link rel="stylesheet" href="style.css?v=20">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -18,10 +18,18 @@
       <span class="hamburger"></span>
     </button>
     <ul class="nav-links">
-      <li><a href="index.html#about">Bio</a></li>
-      <li><a href="index.html#news">News</a></li>
-      <li><a href="index.html#employment">Experience</a></li>
-      <li><a href="index.html#publications">Publications</a></li>
+      <li class="nav-dropdown">
+        <button class="nav-dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">About <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+        <ul class="nav-submenu">
+          <li><a href="index.html#about">Bio</a></li>
+          <li><a href="index.html#news">News</a></li>
+          <li><a href="index.html#employment">Professional Experience</a></li>
+          <li><a href="index.html#education">Education</a></li>
+          <li><a href="index.html#publications">Selected Publications</a></li>
+          <li><a href="index.html#awards">Awards</a></li>
+        </ul>
+      </li>
+      <li><a href="publications.html">Publications</a></li>
       <li><a href="opportunities.html">Work with Me</a></li>
     </ul>
   </div>
@@ -61,6 +69,23 @@
       document.querySelector('.nav-toggle').classList.remove('active');
     });
   });
+
+  // "About" dropdown: click to open/close; any other click or Escape closes it
+  (function () {
+    const dd = document.querySelector('.nav-dropdown');
+    const btn = dd.querySelector('.nav-dropdown-toggle');
+    function setOpen(open) {
+      dd.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    btn.addEventListener('click', function () { setOpen(!dd.classList.contains('open')); });
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('.nav-dropdown-toggle')) setOpen(false);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') setOpen(false);
+    });
+  })();
 
   // Navbar shadow on scroll
   window.addEventListener('scroll', function() {
