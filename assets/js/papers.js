@@ -51,7 +51,7 @@ registerPaper({
   authors: ["hongbo-kang", "self", "kunal-agrawal", "yongwei-wu", "phillip-b-gibbons"],
   venueTag:  "SPAA",
   venueFull: "38th ACM Symposium on Parallelism in Algorithms and Architectures, 2026",
-  thumbnail: "assets/papers/2026-SPAA-PIM-Scheduling.png",
+  thumbnail: "assets/images/papers/2026-SPAA-PIM-Scheduling.png",
   links: [
     { label: "Paper", url: "https://doi.org/10.1145/3816782.3819200" },
     { label: "Code",  url: "https://github.com/cmuparlay/PIM-Scheduling" },
@@ -65,7 +65,7 @@ registerPaper({
   authors: ["self", "hongbo-kang", "ziyang-men", "yan-gu", "guy-e-blelloch", "laxman-dhulipala", "charles-mcguffey", "phillip-b-gibbons"],
   venueTag:  "PPoPP",
   venueFull: "31st ACM SIGPLAN Annual Symposium on Principles and Practice of Parallel Programming, 2026",
-  thumbnail: "assets/papers/2026-PPoPP-PIM-zd.png",
+  thumbnail: "assets/images/papers/2026-PPoPP-PIM-zd.png",
   links: [
     { label: "Paper", url: "https://doi.org/10.1145/3774934.3786411" },
     { label: "Code",  url: "https://github.com/cmuparlay/PIM-zd-tree" },
@@ -79,7 +79,7 @@ registerPaper({
   authors: ["self", "hongbo-kang", "yan-gu", "guy-e-blelloch", "laxman-dhulipala", "charles-mcguffey", "phillip-b-gibbons"],
   venueTag:  "SPAA",
   venueFull: "37th ACM Symposium on Parallelism in Algorithms and Architectures, 2025",
-  thumbnail: "assets/papers/2025-SPAA-PIM-kd.png",
+  thumbnail: "assets/images/papers/2025-SPAA-PIM-kd.png",
   links: [
     { label: "Paper", url: "https://doi.org/10.1145/3694906.3743318" },
   ],
@@ -92,7 +92,7 @@ registerPaper({
   authors: ["hyoungjoo-kim", "self", "andrew-pavlo", "phillip-b-gibbons"],
   venueTag:  "VLDB",
   venueFull: "Proceedings of the VLDB Endowment, Vol.18, No.11, 2025",
-  thumbnail: "assets/papers/2025-VLDB-OLTPIM.png",
+  thumbnail: "assets/images/papers/2025-VLDB-OLTPIM.png",
   links: [
     { label: "Paper", url: "https://doi.org/10.14778/3749646.3749690" },
     { label: "Code",  url: "https://github.com/hyoungjook/OLTPim" },
@@ -106,7 +106,7 @@ registerPaper({
   authors: ["self", "jinhui-chen", "sai-qian-zhang", "syed-shakib-sarwar", "kleber-stangherlin", "jorge-gomez", "jae-sun-seo", "barbara-de-salvo", "chiao-liu", "phillip-b-gibbons", "ziyun-li"],
   venueTag:  "ASP-DAC",
   venueFull: "30th Asia and South Pacific Design Automation Conference, 2025",
-  thumbnail: "assets/papers/2025-ASPDAC-H4H.png",
+  thumbnail: "assets/images/papers/2025-ASPDAC-H4H.png",
   links: [
     { label: "Paper",   url: "https://doi.org/10.1145/3658617.3697627" },
     { label: "arXiv",   url: "https://arxiv.org/abs/2410.08326" },
@@ -122,7 +122,7 @@ registerPaper({
   authors: ["hongbo-kang", "self", "guy-e-blelloch", "laxman-dhulipala", "yan-gu", "charles-mcguffey", "phillip-b-gibbons"],
   venueTag:  "SPAA",
   venueFull: "35th ACM Symposium on Parallelism in Algorithms and Architectures, 2023",
-  thumbnail: "assets/papers/2023-SPAA-PIM-trie.png",
+  thumbnail: "assets/images/papers/2023-SPAA-PIM-trie.png",
   links: [
     { label: "Paper", url: "https://doi.org/10.1145/3558481.3591070" },
   ],
@@ -135,7 +135,7 @@ registerPaper({
   authors: ["hongbo-kang", "self", "guy-e-blelloch", "laxman-dhulipala", "yan-gu", "charles-mcguffey", "phillip-b-gibbons"],
   venueTag:  "VLDB",
   venueFull: "Proceedings of the VLDB Endowment, Vol.16, No.4, 2023",
-  thumbnail: "assets/papers/2022-VLDB-PIM-tree.png",
+  thumbnail: "assets/images/papers/2022-VLDB-PIM-tree.png",
   links: [
     { label: "Paper",    url: "https://doi.org/10.14778/3574245.3574275" },
     { label: "arXiv",    url: "https://arxiv.org/abs/2211.10516" },
@@ -156,7 +156,7 @@ registerPaper({
   authors: ["zeyan-li", "junjie-chen", "yihao-chen", "chengyang-luo", "self", "yongqian-sun", "kaixin-sui", "xiping-wang", "dapeng-liu", "xing-jin", "qi-wang", "dan-pei"],
   venueTag:  "JSS",
   venueFull: "Journal of Systems and Software, Vol. 203, 111748, 2023",
-  thumbnail: "assets/papers/2023-JSS-psqueeze.png",
+  thumbnail: "assets/images/papers/2023-JSS-psqueeze.png",
   links: [
     { label: "Paper", url: "https://doi.org/10.1016/j.jss.2023.111748" },
     { label: "arXiv", url: "https://arxiv.org/abs/2305.03331" },
@@ -171,7 +171,7 @@ registerPaper({
   authors: ["zeyan-li", "chengyang-luo", "self", "yongqian-sun", "kaixin-sui", "xiping-wang", "dapeng-liu", "xing-jin", "qi-wang", "dan-pei"],
   venueTag:  "ISSRE",
   venueFull: "IEEE 30th International Symposium on Software Reliability Engineering, 2019",
-  thumbnail: "assets/papers/2019-ISSRE-Squeeze.png",
+  thumbnail: "assets/images/papers/2019-ISSRE-Squeeze.png",
   links: [
     { label: "Paper",  url: "https://doi.org/10.1109/ISSRE.2019.00015" },
     { label: "Slides", url: "https://netman.aiops.org/wp-content/uploads/2019/10/Squeeze-ISSRE2019_v2.pdf" },

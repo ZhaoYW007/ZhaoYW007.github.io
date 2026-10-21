@@ -1002,7 +1002,7 @@ img {
   padding: 96px 0 84px;
   background:
     linear-gradient(180deg, rgba(60, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.65) 100%),
-    url("assets/campus.jpg") center 45% / cover no-repeat;
+    url("assets/images/campus.jpg") center 45% / cover no-repeat;
   color: #ffffff;
   text-align: center;
 }
